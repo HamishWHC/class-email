@@ -1,9 +1,9 @@
 [project]
 name = "class-email"
-version = "0.0.2"
+version = "0.0.3"
 description = "A tool to output .eml files, because we can't add OAuth applications to use SMTP."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = ["click>=8.1.7", "jinja2>=3.1.4"]
 
 [project.scripts]

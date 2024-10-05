@@ -3,7 +3,7 @@ import platform
 import subprocess
 from csv import reader
 from pathlib import Path
-from typing import TextIO
+from typing import Literal, Optional, TextIO
 
 import click
 from jinja2 import DictLoader, Environment, select_autoescape
@@ -62,13 +62,13 @@ from jinja2 import DictLoader, Environment, select_autoescape
 )
 @click.argument("subject")
 def main(
-    open_files: bool | None,
+    open_files: Optional[Literal["yes", "no"]],
     header_count: int,
-    filter: str | None,
-    filter_file: TextIO | None,
-    filter_column: int | None,
+    filter: Optional[str],
+    filter_file: Optional[TextIO],
+    filter_column: Optional[int],
     email_column: int,
-    sender: str | None,
+    sender: Optional[str],
     outdir: Path,
     datafile: TextIO,
     template: TextIO,
