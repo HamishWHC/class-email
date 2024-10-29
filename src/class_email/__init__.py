@@ -55,7 +55,7 @@ from jinja2 import DictLoader, Environment, select_autoescape
     flag_value="no",
     help="Skips the file open prompt without opening.",
 )
-@click.argument("datafile", type=click.File("r"))
+@click.argument("datafile", type=click.File("r", errors="surrogateescape"))
 @click.argument(
     "template",
     type=click.File("r"),
@@ -113,7 +113,7 @@ def main(
     for row in data:
         target = row[email_column].split("@")[0]
         file = outdir / f"{target}.eml"
-        with open(file, "w") as f:
+        with open(file, "w", errors="surrogateescape") as f:
             if sender:
                 f.write(f"From: <{sender}>\r\n")
             f.write(f"To: {row[email_column]}\r\n")

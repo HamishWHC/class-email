@@ -3,7 +3,7 @@ requires-python = ">=3.9"
 
 [[package]]
 name = "class-email"
-version = "0.0.3"
+version = "0.0.5"
 source = { editable = "." }
 dependencies = [
     { name = "click" },

@@ -1,6 +1,6 @@
 [project]
 name = "class-email"
-version = "0.0.4"
+version = "0.0.5"
 description = "A tool to output .eml files, because we can't add OAuth applications to use SMTP."
 readme = "README.md"
 license = { file = "LICENSE" }
